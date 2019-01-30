@@ -1,0 +1,32 @@
+<%page expression_filter="h"/>
+<%namespace name='static' file='static_content.html'/>
+<%! from django.utils.translation import ugettext as _ %>
+
+<section class="courses-container">
+    % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
+      <section class="courses">
+      <div style="background-color: white; width: 100%; display: block; overflow: hidden; padding: .5%;">
+<h1 style="color: #A7B858; font-weight: 600; margin-top: 1%;">Professional Program: Data Science Track</h1>
+      <ul class="courses-listing">
+          ## limiting the course number by using HOMEPAGE_COURSE_MAX as the maximum number of courses
+          %for course in courses[:settings.HOMEPAGE_COURSE_MAX]:
+	 %  if course.display_number_with_default == 'DAT101x' or course.display_number_with_default == 'DAT201x' or course.display_number_with_default == 'DAT206x'  or course.display_number_with_default == 'DAT207x' or course.display_number_with_default == 'DAT222x'  or course.display_number_with_default == 'DAT204x' or course.display_number_with_default == 'DAT208x'  or course.display_number_with_default == 'DAT274x' or course.display_number_with_default == 'DAT276x'  or course.display_number_with_default == 'DAT275x' or course.display_number_with_default == 'DAT209x' or course.display_number_with_default == 'DAT210x' or course.display_number_with_default == 'DAT202.3x'   or course.display_number_with_default == 'DAT213x' or course.display_number_with_default == 'DAT102x' :  
+<li class="courses-listing-item">
+              <%include file="course1.html" args="course=course" />
+
+          </li>
+
+           %  endif
+       %endfor
+      </ul>
+</div>
+      </section>
+    ## in case there are courses that are not shown on the homepage, a 'View all Courses' link should appear
+      % if settings.HOMEPAGE_COURSE_MAX and len(courses) > settings.HOMEPAGE_COURSE_MAX:
+      <div class="courses-more">
+        <a class="courses-more-cta" href="${marketing_link('COURSES')}"> ${_("View all Courses")} </a>
+      </div>
+    % endif
+    % endif
+</section>
+

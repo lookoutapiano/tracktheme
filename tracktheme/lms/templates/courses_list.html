@@ -1,0 +1,187 @@
+<%page expression_filter="h"/>
+<%namespace name='static' file='static_content.html'/>
+<%! from django.utils.translation import ugettext as _ %>
+<div class="filler" style="background-image: url(https://i.imgur.com/4lGEJ8c.png);
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 15em;
+    opacity: 0.3;"></div>
+<section class="courses-container">
+  <section class="highlighted-courses" style="height: 4em; background-color: ghostwhite;">
+
+    % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
+      <section class="courses" style="background-color:ghostwhite;">
+
+<div style="background-color: white; width: 100%; display: block; overflow: hidden; padding: .5%;">
+<h1 style="color: #A7B858; font-weight: 600; margin-top: 1%;">Professional Program: Data Science Track</h1>
+      <ul class="courses-listing">
+          ## limiting the course number by using HOMEPAGE_COURSE_MAX as the maximum number of courses
+          %for course in courses[:settings.HOMEPAGE_COURSE_MAX]:
+	%  if course.display_number_with_default == 'DAT101x' or course.display_number_with_default == 'DAT201x' or course.display_number_with_default == 'DAT206x'  or course.display_number_with_default == 'DAT207x' or course.display_number_with_default == 'DAT222x'  or course.display_number_with_default == 'DAT204x' or course.display_number_with_default == 'DAT208x'  or course.display_number_with_default == 'DAT274x' or course.display_number_with_default == 'DAT276x'  or course.display_number_with_default == 'DAT275x' or course.display_number_with_default == 'DAT209x' or course.display_number_with_default == 'DAT210x' or course.display_number_with_default == 'DAT202.3x'   or course.display_number_with_default == 'DAT213x' or course.display_number_with_default == 'DAT102x' :  
+<li class="courses-listing-item">
+              <%include file="course1.html" args="course=course" />
+
+          </li>
+
+           %  endif
+       %endfor
+      </ul>
+</div>
+<div style="background-color: ghostwhite; height: 2em; width: 101%;"></div>
+<div style="background-color: white; width: 100%; display: block; overflow: hidden; padding: .5%;">
+<h1 style="color: #2D8D7F; font-weight: 600; margin-top: 1%;">Professional Program: Big Data Track</h1>
+      <ul class="courses-listing">
+          ## limiting the course number by using HOMEPAGE_COURSE_MAX as the maximum number of courses
+          %for course in courses[:settings.HOMEPAGE_COURSE_MAX]:
+	%  if course.display_number_with_default == 'DAT229x' or course.display_number_with_default == 'DAT206x' or course.display_number_with_default == 'DAT207x'  or course.display_number_with_default == 'DAT221x' or course.display_number_with_default == 'DAT201x'  or course.display_number_with_default == 'DAT220x' or course.display_number_with_default == 'DAT223.1x'  or course.display_number_with_default == 'DAT202.1x' or course.display_number_with_default == 'DAT223.2x '  or course.display_number_with_default == 'DAT202.2x' or course.display_number_with_default == 'DAT223.3x' or course.display_number_with_default == 'DAT228x' or course.display_number_with_default == 'DAT213x'   or course.display_number_with_default == 'DAT202.3x ' or course.display_number_with_default == 'DAT230x' :  
+<li class="courses-listing-item">
+              <%include file="course2.html" args="course=course" />
+
+          </li>
+
+           %  endif
+       %endfor
+      </ul>
+</div>
+<div style="background-color: ghostwhite; height: 2em; width: 101%;"></div>
+<div style="background-color: white; width: 100%; display: block; overflow: hidden; padding: .5%;">
+<h1 style="color: #00545F; font-weight: 600; margin-top: 1%;">Professional Program: Artificial Intelligence Track</h1>
+      <ul class="courses-listing">
+          ## limiting the course number by using HOMEPAGE_COURSE_MAX as the maximum number of courses
+          %for course in courses[:settings.HOMEPAGE_COURSE_MAX]:
+	%  if course.display_number_with_default == 'DAT263x' or course.display_number_with_default == 'DAT208x' or course.display_number_with_default == 'DAT256x'  or course.display_number_with_default == 'DAT249x' or course.display_number_with_default == 'DAT203.1x '  or course.display_number_with_default == 'DAT275x' or course.display_number_with_default == 'DAT236x'  or course.display_number_with_default == 'DAT257x' or course.display_number_with_default == 'DEV288x'  or course.display_number_with_default == 'DEV287x' or course.display_number_with_default == 'DEV290x' or course.display_number_with_default == 'DAT264x' :  
+<li class="courses-listing-item">
+              <%include file="course3.html" args="course=course" />
+
+          </li>
+
+           %  endif
+       %endfor
+      </ul>
+
+</div>
+<div style="background-color: ghostwhite; height: 2em; width: 101%;"></div>
+<div style="background-color: white; width: 100%; deisplay: block; overflow: hidden; padding: .5%;">
+<h1 style="color: #523473; font-weight: 600; margin-top: 1%;">Professional Program: DevOps Track</h1>
+      <ul class="courses-listing">
+          ## limiting the course number by using HOMEPAGE_COURSE_MAX as the maximum number of courses
+          %for course in courses[:settings.HOMEPAGE_COURSE_MAX]:
+	%  if course.display_number_with_default == 'DEVOPS200.1x' or course.display_number_with_default == 'DEVOPS200.2x' or course.display_number_with_default == 'DEVOPS200.3x'  or course.display_number_with_default == 'DEVOPS200.4x' or course.display_number_with_default == 'DEVOPS200.5x'  or course.display_number_with_default == 'DEVOPS200.6x' or course.display_number_with_default == 'DEVOPS200.7x' :  
+<li class="courses-listing-item">
+              <%include file="course4.html" args="course=course" />
+
+          </li>
+
+           %  endif
+       %endfor
+      </ul>
+</div>
+<div style="background-color: ghostwhite; height: 2em; width: 101%;"></div>
+<div style="background-color: white; width: 100%; display: block; overflow: hidden; padding: .5%;">
+<h1 style="color: #FAA54B; font-weight: 600; margin-top: 1%;">Professional Program: Modern IT Support Track</h1>
+      <ul class="courses-listing">
+          ## limiting the course number by using HOMEPAGE_COURSE_MAX as the maximum number of courses
+          %for course in courses[:settings.HOMEPAGE_COURSE_MAX]:
+	%  if course.display_number_with_default == 'CLD251x' or course.display_number_with_default == 'CLD252x' or course.display_number_with_default == 'CLD253x'  or course.display_number_with_default == 'CLD254x' or course.display_number_with_default == 'CLD259x'  or course.display_number_with_default == 'CLD260x' or course.display_number_with_default == 'CLD255x'  or course.display_number_with_default == 'CLD257x' or course.display_number_with_default == 'CLD256x'  or course.display_number_with_default == 'CLD258x' or course.display_number_with_default == 'CLD261x' or course.display_number_with_default == 'CLD262x' or course.display_number_with_default == 'CLD263x':  
+<li class="courses-listing-item">
+              <%include file="course5.html" args="course=course" />
+
+          </li>
+
+           %  endif
+       %endfor
+      </ul>
+</div>
+<div style="background-color: ghostwhite; height: 2em; width: 101%;"></div>
+<div style="background-color: white; width: 100%; display: block; overflow: hidden; padding: .5%;">
+<h1 style="color: #4A6BB1; font-weight: 600; margin-top: 1%;">Professional Program: Cloud Administration Track</h1>
+      <ul class="courses-listing">
+          ## limiting the course number by using HOMEPAGE_COURSE_MAX as the maximum number of courses
+          %for course in courses[:settings.HOMEPAGE_COURSE_MAX]:
+           %  if course.display_number_with_default == 'AZURE215x' or course.display_number_with_default == 'AZURE202x' or course.display_number_with_default == 'AZURE203x' or course.display_number_with_default == 'AZURE204x' or course.display_number_with_default == 'AZURE205x' or course.display_number_with_default == 'AZURE206x' or course.display_number_with_default == 'AZURE207x' or course.display_number_with_default == 'AZURE208x' or course.display_number_with_default == 'AZURE210x' or course.display_number_with_default == 'AZURE212x' :
+  <li class="courses-listing-item">
+              <%include file="course6.html" args="course=course" />
+  </li>
+
+           %  endif
+       %endfor
+      </ul>
+</div>
+<div style="background-color: ghostwhite; height: 2em; width: 101%;"></div>
+<div style="background-color: white; width: 100%; display: block; overflow: hidden; padding: .5%;">
+<h1 style="color: tomato; font-weight: 600; margin-top: 1%;">Professional Program: Entry Level Modern Software Development Track</h1>
+      <ul class="courses-listing">
+          ## limiting the course number by using HOMEPAGE_COURSE_MAX as the maximum number of courses
+          %for course in courses[:settings.HOMEPAGE_COURSE_MAX]:
+%  if course.display_number_with_default == 'DEV262x' or course.display_number_with_default == 'DEV236x' or course.display_number_with_default == 'DEV274x'  or course.display_number_with_default == 'DEV284x' or course.display_number_with_default == 'DEV279x'  or course.display_number_with_default == 'DEV280x' or course.display_number_with_default == 'DEV276x'  or course.display_number_with_default == 'DEV277x' or course.display_number_with_default == 'DEV285x'  or course.display_number_with_default == 'DEV275x' or course.display_number_with_default == 'DEV241x' or course.display_number_with_default == 'DIS50x' :   
+<li class="courses-listing-item">
+              <%include file="course7.html" args="course=course" />
+
+          </li>
+
+           %  endif
+       %endfor
+      </ul>
+</div>
+<div style="background-color: ghostwhite; height: 2em; width: 101%;"></div>
+<div style="background-color: white; width: 100%; display: block; overflow: hidden; padding: .5%;">
+<h1 style="color: darkviolet; font-weight: 600; margin-top: 1%;">Professional Program: Front End Web Development</h1>
+<ul class="courses-listing">
+          ## limiting the course number by using HOMEPAGE_COURSE_MAX as the maximum number of courses
+          %for course in courses[:settings.HOMEPAGE_COURSE_MAX]:
+           %  if course.display_number_with_default =='DEV237x' or course.display_number_with_default == 'DEV273x' or course.display_number_with_default == 'DEV218x' or course.display_number_with_default == 'DEV203x' or course.display_number_with_default == 'DEV208x' or course.display_number_with_default == 'DEV281x ' or course.display_number_with_default == 'DEV314x' or course.display_number_with_default == 'DEV315x' or course.display_number_with_default == 'DEV282x' or course.display_number_with_default == 'DEV224x' or course.display_number_with_default == 'DEV212x' :
+                   <li class="courses-listing-item">
+              <%include file="course8.html" args="course=course" />
+
+          </li>
+
+           %  endif
+       %endfor
+      </ul>
+</div>
+
+<div style="background-color: ghostwhite; height: 2em; width: 101%;"></div>
+<div style="background-color: white; width: 100%; display: block; overflow: hidden; padding: .5%;">
+<h1 style="color: #d6b409; font-weight: 600; margin-top: 1%;">Professional Program: Cybersecurity</h1>
+<ul class="courses-listing">
+          ## limiting the course number by using HOMEPAGE_COURSE_MAX as the maximum number of courses
+          %for course in courses[:settings.HOMEPAGE_COURSE_MAX]:
+	   %  if course.display_number_with_default == 'INF246x' or course.display_number_with_default == 'INF249x' or course.display_number_with_default == 'INF250x' or course.display_number_with_default == 'INF250x' or course.display_number_with_default == 'INF251x' or course.display_number_with_default == 'INF253x' or course.display_number_with_default == 'INF258x' or course.display_number_with_default == 'INF259x' or course.display_number_with_default == 'INF260x' or course.display_number_with_default == 'DAT243x' or course.display_number_with_default == 'CLD245x' or course.display_number_with_default == 'CLD211.2x':
+	  <li class="courses-listing-item">
+              <%include file="course9.html" args="course=course" />
+          </li>
+
+           %  endif
+       %endfor
+      </ul>
+</div>
+
+
+<div style="background-color: ghostwhite; height: 2em; width: 101%;"></div>
+<div style="background-color: white; width: 100%; display: block; overflow: hidden; padding: .5%;">
+<h1 style="color: #7ac1eb; font-weight: 600; margin-top: 1%;">Other Professional Courses</h1>
+
+       <ul class="courses-listing">
+          ## limiting the course number by using HOMEPAGE_COURSE_MAX as the maximum number of courses
+          %for course in courses[:settings.HOMEPAGE_COURSE_MAX]:
+	 %  if course.display_number_with_default != 'DAT101x'and course.display_number_with_default != 'DAT201x'and course.display_number_with_default != 'DAT206x' and course.display_number_with_default != 'DAT207x'and course.display_number_with_default != 'DAT222x' and course.display_number_with_default != 'DAT204x'and course.display_number_with_default != 'DAT208x' and course.display_number_with_default != 'DAT274x'and course.display_number_with_default != 'DAT276x' and course.display_number_with_default != 'DAT275x'and course.display_number_with_default != 'DAT209x'and course.display_number_with_default != 'DAT210x'and course.display_number_with_default != 'DAT202.3x'  and course.display_number_with_default != 'DAT213x'and course.display_number_with_default != 'DAT102x'and course.display_number_with_default != 'DAT229x'and course.display_number_with_default != 'DAT206x'and course.display_number_with_default != 'DAT207x' and course.display_number_with_default != 'DAT221x'and course.display_number_with_default != 'DAT201x' and course.display_number_with_default != 'DAT220x'and course.display_number_with_default != 'DAT223.1x' and course.display_number_with_default != 'DAT202.1x'and course.display_number_with_default != 'DAT223.2x ' and course.display_number_with_default != 'DAT202.2x'and course.display_number_with_default != 'DAT223.3x'and course.display_number_with_default != 'DAT228x'and course.display_number_with_default != 'DAT213x'  and course.display_number_with_default != 'DAT202.3x 'and course.display_number_with_default != 'DAT230x'and course.display_number_with_default != 'DAT263x'and course.display_number_with_default != 'DAT208x'and course.display_number_with_default != 'DAT256x' and course.display_number_with_default != 'DAT249x'and course.display_number_with_default != 'DAT203.1x ' and course.display_number_with_default != 'DAT275x'and course.display_number_with_default != 'DAT236x' and course.display_number_with_default != 'DAT257x'and course.display_number_with_default != 'DEV288x' and course.display_number_with_default != 'DEV287x'and course.display_number_with_default != 'DEV290x'and course.display_number_with_default != 'DAT264x'and course.display_number_with_default != 'DEVOPS200.1x'and course.display_number_with_default != 'DEVOPS200.2x'and course.display_number_with_default != 'DEVOPS200.3x' and course.display_number_with_default != 'DEVOPS200.4x'and course.display_number_with_default != 'DEVOPS200.5x' and course.display_number_with_default != 'DEVOPS200.6x'and course.display_number_with_default != 'DEVOPS200.7x'and course.display_number_with_default != 'CLD251x'and course.display_number_with_default != 'CLD252x'and course.display_number_with_default != 'CLD253x' and course.display_number_with_default != 'CLD254x'and course.display_number_with_default != 'CLD259x' and course.display_number_with_default != 'CLD260x'and course.display_number_with_default != 'CLD255x' and course.display_number_with_default != 'CLD257x'and course.display_number_with_default != 'CLD256x' and course.display_number_with_default != 'CLD258x'and course.display_number_with_default != 'CLD261x'and course.display_number_with_default != 'CLD262x'and course.display_number_with_default != 'CLD263x'and   course.display_number_with_default != 'AZURE215x'and course.display_number_with_default != 'AZURE202x'and course.display_number_with_default != 'AZURE203x'and course.display_number_with_default != 'AZURE204x'and course.display_number_with_default != 'AZURE205x'and course.display_number_with_default != 'AZURE206x'and course.display_number_with_default != 'AZURE207x'and course.display_number_with_default != 'AZURE208x'and course.display_number_with_default != 'AZURE210x'and course.display_number_with_default != 'AZURE212x'and  course.display_number_with_default != 'DEV262x'and course.display_number_with_default != 'DEV236x'and course.display_number_with_default != 'DEV274x' and course.display_number_with_default != 'DEV284x'and course.display_number_with_default != 'DEV279x' and course.display_number_with_default != 'DEV280x'and course.display_number_with_default != 'DEV276x' and course.display_number_with_default != 'DEV277x'and course.display_number_with_default != 'DEV285x' and course.display_number_with_default != 'DEV275x'and course.display_number_with_default != 'DEV241x'and course.display_number_with_default != 'DIS50x'and course.display_number_with_default !='DEV237x'and course.display_number_with_default != 'DEV273x'and course.display_number_with_default != 'DEV218x'and course.display_number_with_default != 'DEV203x'and course.display_number_with_default != 'DEV208x'and course.display_number_with_default != 'DEV281x 'and course.display_number_with_default != 'DEV314x'and course.display_number_with_default != 'DEV315x'and course.display_number_with_default != 'DEV282x'and course.display_number_with_default != 'DEV224x'and course.display_number_with_default != 'DEV212x'and course.display_number_with_default != 'INF246x'and course.display_number_with_default != 'INF249x'and course.display_number_with_default != 'INF250x'and course.display_number_with_default != 'INF250x'and course.display_number_with_default != 'INF251x'and course.display_number_with_default != 'INF253x'and course.display_number_with_default != 'INF258x'and course.display_number_with_default != 'INF259x'and course.display_number_with_default != 'INF260x'and course.display_number_with_default != 'DAT243x'and course.display_number_with_default != 'CLD245x'and course.display_number_with_default != 'CLD211.2x':
+	<li class="courses-listing-item">
+              <%include file="course10.html" args="course=course" />
+          </li>
+        %endif
+        %endfor
+       </ul>
+
+</div>
+      </section>
+    ## in case there are courses that are not shown on the homepage, a 'View all Courses' link should appear
+      % if settings.HOMEPAGE_COURSE_MAX and len(courses) > settings.HOMEPAGE_COURSE_MAX:
+      <div class="courses-more">
+        <a class="courses-more-cta" href="${marketing_link('COURSES')}"> ${_("View all Courses")} </a>
+      </div>
+    % endif
+    % endif
+

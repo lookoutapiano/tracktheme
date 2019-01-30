@@ -1,0 +1,31 @@
+<%page expression_filter="h"/>
+<%namespace name='static' file='static_content.html'/>
+<%! from django.utils.translation import ugettext as _ %>
+
+<section class="courses-container">
+    % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
+      <section class="courses">
+    <div style="background-color: white; width: 100%; display: block; overflow: hidden; padding: .5%;">
+<h1 style="color: #FAA54B; font-weight: 600; margin-top: 1%;">Professional Program: Modern IT Support Track</h1>
+      <ul class="courses-listing">
+          ## limiting the course number by using HOMEPAGE_COURSE_MAX as the maximum number of courses
+          %for course in courses[:settings.HOMEPAGE_COURSE_MAX]:
+%  if course.display_number_with_default == 'CLD251x' or course.display_number_with_default == 'CLD252x' or course.display_number_with_default == 'CLD253x'  or course.display_number_with_default == 'CLD254x' or course.display_number_with_default == 'CLD259x'  or course.display_number_with_default == 'CLD260x' or course.display_number_with_default == 'CLD255x'  or course.display_number_with_default == 'CLD257x' or course.display_number_with_default == 'CLD256x'  or course.display_number_with_default == 'CLD258x' or course.display_number_with_default == 'CLD261x' or course.display_number_with_default == 'CLD262x' or course.display_number_with_default == 'CLD263x':
+<li class="courses-listing-item">
+              <%include file="course5.html" args="course=course" />
+
+          </li>
+
+           %  endif
+       %endfor
+      </ul>
+</div>
+      </section>
+    ## in case there are courses that are not shown on the homepage, a 'View all Courses' link should appear
+      % if settings.HOMEPAGE_COURSE_MAX and len(courses) > settings.HOMEPAGE_COURSE_MAX:
+      <div class="courses-more">
+        <a class="courses-more-cta" href="${marketing_link('COURSES')}"> ${_("View all Courses")} </a>
+      </div>
+    % endif
+    % endif
+</section>
